@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Movie App</title>
+  </head>
+  <body>
+    <nav>
+
+        <a href = "#" class = "logo">
+            <img src="assets/images/iCinema.png">
+        </a>
+
+
+        <lable class = "menu-icon" for ="menu-btn">
+            <span class = "nav-icon"></span>
+        </lable>
+        <ul class = "menu">
+
+            <li><a href="#"> Home</a></li>
+            <li><a href="#"> Movies</a></li>
+            <li><a href="#"> TV Shows</a></li>
+            <li><a href="#"> Hollywood</a></li>
+            <li><a href="#"> Horror</a></li>
+
+        </ul>
+         <! ---search --------->
+        <div class = "search">
+        <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Search..."
+
+          />
+          <button type="submit" class="btn" id="search">
+          <img src="https://img.icons8.com/android/24/000000/search.png"/>
+        </button>
+        </div>
+        <! ---search icon --------->
+        <i class ="fas fa-search"></i>
+
+    </nav>
+    <div class="container">
+      <h1>iCinema</h1>
+<!--      <form>-->
+<!--&lt;!&ndash;        <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;          <input&ndash;&gt;-->
+<!--&lt;!&ndash;            type="text"&ndash;&gt;-->
+<!--&lt;!&ndash;            class="form-control"&ndash;&gt;-->
+<!--&lt;!&ndash;            id="exampleInputEmail1"&ndash;&gt;-->
+<!--&lt;!&ndash;            aria-describedby="emailHelp"&ndash;&gt;-->
+<!--&lt;!&ndash;            placeholder="Search..."&ndash;&gt;-->
+<!--&lt;!&ndash;          />&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <button type="submit" class="btn" id="search">&ndash;&gt;-->
+<!--&lt;!&ndash;          Search your fav movie&ndash;&gt;-->
+<!--&lt;!&ndash;        </button>&ndash;&gt;-->
+<!--      </form>-->
+
+      <div id="movies-searchable"></div>
+      <div id="movies-container"></div>
+    </div>
+
+    <script src="./assets/js/apiTransaction.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
