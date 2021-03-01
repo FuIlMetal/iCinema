@@ -52,26 +52,28 @@
       </div>
       <div class="form sign-up">
         <h2>Sign Up</h2>
+        <form class ="login-form" id="user-form">
         <label>
           <span>Name</span>
-          <input type="text">
+          <input type="text" name="name">
         </label>
         <label>
           <span>Email</span>
-          <input type="email">
+          <input type="email" name="email">
         </label>
         <label>
           <span>Password</span>
-          <input type="password">
+          <input type="password" name="password">
         </label>
         <label>
           <span>Confirm Password</span>
-          <input type="password">
+          <input type="password" name="password2">
         </label>
-        <button type="button" class="submit">Sign Up Now</button>
+        <button type="button" class="submit" onclick="register(this.form)">Sign Up Now</button>
+        </form>
       </div>
     </div>
   </div>
-<script type="text/javascript" src="assets/app1.js"></script>
+<script type="text/javascript" src="assets/js/app1.js"></script>
 </body>
 </html>
