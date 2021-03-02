@@ -1,1 +1,0 @@
-      CURLOPT_URL => $url,
