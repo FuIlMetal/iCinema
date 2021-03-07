@@ -63,18 +63,12 @@ function signIn(form)
     document.location.reload(true)
   }
   
-  /*
-  //this is the correct login
-  var userInfo = JSON.stringify({"email":"aa2296@njit.edu", "password":"password"});
-  //lets pretend we send this and get a proper response
-  var response = JSON.stringify({"message":"Successful Login", "full_name":"Anthony Anderson"});
-  */
   else{
     //this is the incorrect login
     var userInfo = JSON.stringify({"email":"anthony@google.com", "password":"password"});
     //lets pretend we send this and get a proper response
-    var response = JSON.stringify({"message":"Login Failed.", "full_name":"NULL"});
-    
+    //var response = JSON.stringify({"message":"Login Failed.", "full_name":"NULL"});
+    var response = JSON.stringify({"message":"Successful Login", "full_name":"Anthony Anderson"});
     
     
     var creds=JSON.parse(response);
@@ -87,7 +81,7 @@ function signIn(form)
     else 
     { 
       var sessionChange = new XMLHttpRequest(); 
-      sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
+      sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/front.php" , true); 
       sessionChange.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       sessionChange.send("name="+creds.full_name);
       window.location.pathname = '/~aa2296/iCinema/';
@@ -119,7 +113,7 @@ function register(form)
       else 
       { 
           var sessionChange = new XMLHttpRequest(); 
-          sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
+          sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/front.php" , true); 
           sessionChange.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
           sessionChange.send("name="+name);
           window.location.pathname = '/~aa2296/iCinema/';
@@ -161,10 +155,10 @@ function register(form)
     var userInfo = JSON.stringify({"email": email,"password":pass,"full_name":name});
     
     //Lets pretend it was a success
-    //var response = JSON.stringify({"message":"User was successfully regitered", "full_name":"Anthony A"});
+    var response = JSON.stringify({"message":"User was successfully regitered", "full_name":"Anthony A"});
     
     //This is to test if it was a bad registration
-    var response = JSON.stringify({"message":"Unable to register the user.", "full_name":"NULL"});
+    //var response = JSON.stringify({"message":"Unable to register the user.", "full_name":"NULL"});
     var creds=JSON.parse(response);
     var message = creds.message;
     if((message)=="Unable to register the user.")
@@ -175,7 +169,7 @@ function register(form)
     else 
     { 
       var sessionChange = new XMLHttpRequest(); 
-      sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
+      sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/front.php" , true); 
       sessionChange.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       sessionChange.send("name="+creds.full_name);
       window.location.pathname = '/~aa2296/iCinema/';
