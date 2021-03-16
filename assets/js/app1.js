@@ -9,23 +9,24 @@ function signIn(form)
 
   // Below is the code for pinging the DB and checking a sign in
   
-  /*
-  var ajax=new XMLHttpRequest();
   
+  var ajax=new XMLHttpRequest();
+  var name;
   ajax.onreadystatechange = function()
   {
     if(ajax.readyState == 4 && ajax.status == 200)
     {
+      alert(this.responseText);
       var creds=JSON.parse(this.responseText);
       var message = creds.message;
-      var name;
-      if((message)=="Login Failed.")
+      if((message)!="Successfully login!")
       {
           alert("The email or password you’ve entered doesn’t match any account.");
           document.location.reload(true); 
       }
       else 
       { 
+          name = creds.full_name;
           var sessionChange = new XMLHttpRequest(); 
           sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
           sessionChange.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -33,11 +34,10 @@ function signIn(form)
           window.location.pathname = '/~aa2296/iCinema/';
       }
     }
-  }
+  };
  
   var email = form.email.value;
   var pass = form.password.value;
-  name=email;
   if(email == "" || pass == "")
   { 
     alert("Make sure enter values for both");
@@ -45,12 +45,14 @@ function signIn(form)
   }
   else
   {
-    ajax.open("POST", "https://web.njit.edu/~la92/registration-api/login.php", true);
-    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    ajax.open("POST", "https://web.njit.edu/~la92/api/User/login.php", true);
+    ajax.setRequestHeader("Content-type", "application/json");
     var userInfo = JSON.stringify({"email":form.email.value, "password":form.password.value}); 
     ajax.send(userInfo);
   }
-  */
+  
+  
+  /*
   
   
   // This code will test a correct log in or incorrect
@@ -87,7 +89,7 @@ function signIn(form)
       window.location.pathname = '/~aa2296/iCinema/';
     }
   }
-  
+  */
   // This code will test an incorrect log in
   
   
@@ -95,23 +97,25 @@ function signIn(form)
 
 function register(form)
 {
-
-  /*  This code will ping the server for getting information from the DB
+  
+  //  This code will ping the server for getting information from the DB
   var ajax=new XMLHttpRequest();
   var name;
   ajax.onreadystatechange = function()
   {
     if(ajax.readyState == 4 && ajax.status == 200)
     {
+      alert(this.responseText);
       var creds=JSON.parse(this.responseText);
       var message = creds.message;
-      if((message)=="Unable to register the user.")
+      if((message)=="User already exists!")
       {
-          alert("Unable to register the user.");
+          alert("Unable to register the user due to user already in Database");
           document.location.reload(true); 
       }
       else 
       { 
+          name = creds.full_name;
           var sessionChange = new XMLHttpRequest(); 
           sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/front.php" , true); 
           sessionChange.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -132,12 +136,15 @@ function register(form)
   }
   else
   {
-    ajax.open("POST", "https://web.njit.edu/~la92/registration-api/register.php", true);
+    ajax.open("POST", "https://web.njit.edu/~la92/api/User/signup.php", true);
     ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    var userInfo = JSON.stringify({"email": email,"password":pass,"full_name":name}); 
+    var userInfo = JSON.stringify({'email': email,'password':pass,'full_name':name}); 
     ajax.send(userInfo);
   }
-  */
+  
+  
+  /*
+  
   
   //This is the current testing code
   var email = form.email.value;
@@ -176,5 +183,7 @@ function register(form)
     }
   
   }
+  */
+  
   
 }
