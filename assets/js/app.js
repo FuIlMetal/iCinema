@@ -1,5 +1,5 @@
 // Initial Values
-const INITIAL_SEARCH_VALUE = 'hollywood';
+const INITIAL_SEARCH_VALUE = 'Home Alone';
 const log = console.log;
 
 // Selecting elements from the DOM
