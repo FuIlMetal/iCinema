@@ -6,7 +6,7 @@ window.onload = function()
   {
     if(ajax.readyState == 4 && ajax.status == 200)
     {
-      alert(this.responseText);
+      //alert(this.responseText);
     }
   }
   ajax.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
@@ -21,7 +21,6 @@ function signout()
   {
     if(sessionChange.readyState == 4 && sessionChange.status == 200)
     {
-      alert(this.responseText);
       window.location.pathname = '/~aa2296/iCinema/';
     }
   }
