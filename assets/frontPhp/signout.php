@@ -12,8 +12,9 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 if(isset($_POST["signout"]))
 {
 
-  echo "got here";
+  
   unset($_SESSION['userName']);
+  unset($_SESSION['user_id']);
   
 }
 

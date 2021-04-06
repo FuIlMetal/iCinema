@@ -1,6 +1,7 @@
 <?php session_start(); 
-  if(empty($_SESSION['userName'])){
-    header("Location: register.html");}
+  if(!isset($_SESSION['user_id'])){
+    header("Location: register.html");
+    }
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,8 +50,9 @@
         <! ---search icon --------->
         <i class ="fas fa-search"></i>
         <div class = "menu-btn" >
-            <button name="Log Out" button type="submit" class = "btn" id = "logout"> Log-Out</button>
+            <button name="Log Out" button type="submit" class = "btn" id = "logout" onclick="signout()"> Log-Out</button>
         </div>
+        <div id="userID" data-id="" data-name=""><div>
     </nav>
     <div class="container">
       <h1>iCinema</h1>
@@ -76,5 +78,6 @@
 
     <script src="./assets/js/apiTransaction.js"></script>
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/recommend.js"></script>
   </body>
 </html>

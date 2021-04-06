@@ -16,7 +16,6 @@ function signIn(form)
   {
     if(ajax.readyState == 4 && ajax.status == 200)
     {
-
       var creds=JSON.parse(this.responseText);
       var message = creds.message;
       if((message)!="Successfully login!")
@@ -26,11 +25,11 @@ function signIn(form)
       }
       else 
       { 
-          name = creds.full_name;
+          name = creds.fullname;
           var sessionChange = new XMLHttpRequest(); 
           sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
-          sessionChange.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          sessionChange.send("name="+name);
+          sessionChange.setRequestHeader("Content-type", "application/json");
+          sessionChange.send(JSON.stringify({"name":name, "id":creds.user_id })); 
           window.location.pathname = '/~aa2296/iCinema/';
       }
     }
@@ -73,11 +72,10 @@ function register(form)
       }
       else 
       { 
-          name = creds.full_name;
           var sessionChange = new XMLHttpRequest(); 
           sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
           sessionChange.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          sessionChange.send("name="+name);
+          sessionChange.send(JSON.stringify({"name":creds.fullnaame, "id":creds.user_id})); 
           window.location.pathname = '/~aa2296/iCinema/';
       }
     }
