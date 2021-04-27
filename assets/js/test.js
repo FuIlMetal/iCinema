@@ -5,7 +5,7 @@ function testName(newName)
   {
     if(sessionChange.readyState == 4 && sessionChange.status == 200)
     {
-      alert("Given name was " newName". Database returned name after SignIn/Register is "+this.responseText);
+      //alert("Given name was " newName". Database returned name after SignIn/Register is "+this.responseText);
     }
   }
   sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
@@ -20,7 +20,7 @@ function testName(newName)
   {
     if(sessionChange.readyState == 4 && sessionChange.status == 200)
     {
-      alert("Given name was " newName". PHP name set as "+this.responseText);
+      //alert("Given name was " newName". PHP name set as "+this.responseText);
     }
   }
   sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 

@@ -1,25 +1,25 @@
 <?php
-$conn = new mysqli('localhost:3306', 'root', '', 'ratingSystem');
+//$conn = new mysqli('localhost:3306', 'root', '', 'ratingSystem');
 
 if (isset($_POST['save'])) {
-    echo $uID = $conn->real_escape_string($_POST['uID']);
-    $ratedIndex = $conn->real_escape_string($_POST['ratedIndex']);
-    $ratedIndex++;
+    //echo $uID = $conn->real_escape_string($_POST['uID']);
+    //$ratedIndex = $conn->real_escape_string($_POST['ratedIndex']);
+  //  $ratedIndex++;
 
     if (!empty($uID)) {
-        $conn->query("INSERT INTO stars (`rateIndex`) VALUES ('$ratedIndex')");
-        $sql = $conn->query("SELECT id FROM stars ORDER BY id DESC LIMIT 1");
-        $uData = $sql->fetch_assoc();
-        $uID = $uData['id'];
+        //$conn->query("INSERT INTO stars (`rateIndex`) VALUES ('$ratedIndex')");
+       // $sql = $conn->query("SELECT id FROM stars ORDER BY id DESC LIMIT 1");
+        //$uData = $sql->fetch_assoc();
+       // $uID = $uData['id'];
     } else{
-        $conn->query("UPDATE stars SET rateIndex='$ratedIndex' WHERE id='$uID'");
+       // $conn->query("UPDATE stars SET rateIndex='$ratedIndex' WHERE id='$uID'");
     }
 
 
 
     exit(json_encode(array('id' => $uID)));
 }
-
+/*
 $sql = $conn->query("SELECT id FROM stars");
 $numR = $sql->num_rows;
 
@@ -28,6 +28,7 @@ $rData = $sql->fetch_array();
 $total = $rData['total'];
 
 $avg = $total / $numR;
+*/
 ?>
 <!doctype html>
 <html lang="en">

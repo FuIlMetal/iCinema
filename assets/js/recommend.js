@@ -11,6 +11,7 @@ window.onload = function()
       document.getElementById("userID").dataset.name = creds.name;
       testID(document.getElementById("userID").dataset.id);
       testName(document.getElementById("userID").dataset.name);
+      //getRecommend();
     }
   }
   ajax.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
@@ -58,7 +59,7 @@ function testSignOut(oldID)
   {
     if(sessionChange.readyState == 4 && sessionChange.status == 200)
     {
-      alert("ID set to " +this.responseText+". ID was set as "+oldID);
+      //alert("ID set to " +this.responseText+". ID was set as "+oldID);
     }
   }
   sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
@@ -73,10 +74,31 @@ function testID(newID)
   {
     if(sessionChange.readyState == 4 && sessionChange.status == 200)
     {
-      alert("Given id was "+newID+". PHP session ID set as "+this.responseText);
+      //alert("Given id was "+newID+". PHP session ID set as "+this.responseText);
     }
   }
   sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
   sessionChange.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   sessionChange.send(JSON.stringify({"getId":"please"}));
+}
+
+
+function getRecommend()
+{
+
+  var sessionChange = new XMLHttpRequest(); 
+  sessionChange.onreadystatechange = function()
+  {
+    if(sessionChange.readyState == 4 && sessionChange.status == 200)
+    {
+      alert(this.responseText);
+    }
+  }
+  sessionChange.open("POST","https://icin.herokuapp.com/" , true); 
+  sessionChange.setRequestHeader("Content-type", "application/json");
+  sessionChange.send(JSON.stringify({"imdb_ids": ["tt0114894"]}));
+
+ 
+ 
+  
 }

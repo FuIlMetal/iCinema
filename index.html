@@ -1,6 +1,10 @@
 <?php session_start(); 
   if(!isset($_SESSION['user_id'])){
     header("Location: register.html");
+    header('Access-Control-Allow-Origin: https://icin.herokuapp.com/');
+    header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
+    header('Access-Control-Max-Age: 86400');
     }
   ?>
 <!DOCTYPE html>
@@ -25,7 +29,7 @@
         </lable>
         <ul class = "menu">
 
-            <li><a href="#"> Your Recommendations</a></li>
+            <li><a onclick="getRecommend()"> Your Recommendations</a></li>
 <!--            <li><a href="#"> Movies</a></li>-->
 <!--            <li><a href="#"> TV Shows</a></li>-->
 <!--            <li><a href="#"> Hollywood</a></li>-->
@@ -79,5 +83,6 @@
     <script src="./assets/js/apiTransaction.js"></script>
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/recommend.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>
 </html>
