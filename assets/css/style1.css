@@ -105,6 +105,26 @@ button{
   cursor: pointer;
 }
 
+a:link{
+  text-decoration: none;
+}
+a:visited{ 
+  color: black; 
+  TEXT-DECORATION: none; 
+  font-weight: normal 
+}
+
+a:active{ 
+  COLOR: black;
+  TEXT-DECORATION: none 
+}
+
+a:hover{ 
+  COLOR: red; 
+  TEXT-DECORATION: none; 
+  font-weight: none; 
+}
+
 .forgot-pass:hover{
   color: red;
 }
