@@ -8,6 +8,13 @@ const searchInput = document.querySelector('#exampleInputEmail1');``
 const moviesContainer = document.querySelector('#movies-container');
 const moviesSearchable = document.querySelector('#movies-searchable');
 
+//saved titles
+var title1 = "Avengers";
+var title2 = "Toy Story";
+var title3 = "Get Out";
+var title4 = "Kong";
+var title5 = "Treasure Planet";
+
 function createImageContainer(imageUrl, id) {
     const tempDiv = document.createElement('div');
     tempDiv.setAttribute('class', 'imageContainer');
@@ -157,6 +164,43 @@ document.onclick = function (event) {
         const content = event.target.parentElement;
         content.classList.remove('content-display');
     }
+}
+
+function set1(title){
+    title1 = title;
+}
+function set2(title){
+    title2 = title;
+}
+function set3(title){
+    title3 = title;
+}
+function set4(title){
+    title4 = title;
+}
+function set5(title){
+    title5 = title;
+}
+
+function test1() {
+    const INITIAL_SEARCH_VALUE = title1;
+    searchMovie(INITIAL_SEARCH_VALUE);
+}
+function test2() {
+    const INITIAL_SEARCH_VALUE = title2;
+    searchMovie(INITIAL_SEARCH_VALUE);
+}
+function test3() {
+    const INITIAL_SEARCH_VALUE = title3;
+    searchMovie(INITIAL_SEARCH_VALUE);
+}
+function test4() {
+    const INITIAL_SEARCH_VALUE = title4;
+    searchMovie(INITIAL_SEARCH_VALUE);
+}
+function test5() {
+    const INITIAL_SEARCH_VALUE = title5;
+    searchMovie(INITIAL_SEARCH_VALUE);
 }
 
 // Initialize the search

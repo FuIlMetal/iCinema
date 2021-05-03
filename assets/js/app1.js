@@ -16,7 +16,7 @@ function signIn(form)
   {
     if(ajax.readyState == 4 && ajax.status == 200)
     {
-      alert(this.responseText);
+      //alert(this.responseText);
       var creds=JSON.parse(this.responseText);
       var message = creds.message;
       if((message)!="Successfully login!")
@@ -79,7 +79,7 @@ function register(form)
       }
       else 
       { 
-          alert(this.responseText);
+          ///alert(this.responseText);
           var sessionChange = new XMLHttpRequest(); 
           sessionChange.open("POST","https://web.njit.edu/~aa2296/iCinema/assets/frontPhp/front.php" , true); 
           sessionChange.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -95,7 +95,7 @@ function register(form)
   name = form.name.value;
   if(email == "" || pass == "" || pass2=='' || name=="" || pass!=pass2)
   { 
-    //alert("Make sure to enter values for all and your passwords  match.");
+    alert("Make sure to enter values for all and your passwords  match.");
     document.getElementById("register-form").reset();
   }
   else
